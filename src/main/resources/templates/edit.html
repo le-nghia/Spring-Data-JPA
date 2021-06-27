@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+  <!--Sirdebar trang-->
+  <th:block th:replace="layout/sidebar.html"></th:block>
+  <!--And sidebar -->
+
+  <h3>Edit Category</h3>
+
+  <form action="#" th:action="@{/home/save}" th:object="${homeEntity}" method="POST">
+
+    <div class="form-group">
+      <span>ID: </span>
+      <input  th:value="${id}" disabled/>
+    </div>
+    <div class="form-group">
+      <span>Tiêu đề: </span>
+      <input type="text" th:field="*{title}"/>
+    </div>
+
+    <div class="form-group">
+      <span>Nội dung: </span>
+      <input type="text" th:field="*{content}"/>
+    </div>
+    <div class="form-group">
+      <span>Ảnh: </span>
+      <input type="text" th:field="*{image}"/>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" >Save</button>
+      <a th:href="@{/home}">Cane</a>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

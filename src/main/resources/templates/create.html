@@ -19,10 +19,10 @@
 
     <h3>New Category</h3>
 
-    <form th:action="@{/home/create}" th:object="${homeEntity}" method="POST">
+    <form th:action="@{/home/save}" th:object="${homeEntity}" method="POST">
 
         <div class="form-group">
-            <input type="hidden"/>
+            <input type="hidden" th:field="*{id}"/>
         </div>
         <div class="form-group">
             <span>Tiêu đề: </span>
@@ -40,7 +40,7 @@
 
         <div class="form-group">
             <button type="submit" >Save</button>
-           <a href="/home">Cane</a>
+           <a th:href="@{/home}">Cane</a>
         </div>
     </form>
 

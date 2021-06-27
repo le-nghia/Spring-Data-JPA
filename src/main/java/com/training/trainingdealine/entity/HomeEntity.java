@@ -15,13 +15,13 @@ public class HomeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "title", nullable = true)
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "content", nullable = true)
+    @Column(name = "content")
     private String content;
 
-    @Column(name = "image", nullable = true)
+    @Column(name = "image")
     private String image;
 
 
@@ -33,27 +33,28 @@ public class HomeEntity {
         Id = id;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getContent() {
-        return content;
     }
 
     public void setContent(String content) {
         this.content = content;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
     public String getImage() {
         return image;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 }
